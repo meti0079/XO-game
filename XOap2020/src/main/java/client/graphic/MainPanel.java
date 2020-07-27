@@ -17,8 +17,6 @@ import gameModel.Place;
 import gameModel.requset.ReSummon;
 
 public class MainPanel extends JPanel {
-	boolean isfinish=false;
-	String name;
 	public MainPanel() {
 		initial();
 	}
@@ -27,9 +25,16 @@ public class MainPanel extends JPanel {
 		this.setPreferredSize(new Dimension(700,700));
 	}
 	public void finish(String name) {
-		JButton finishButton= new JButton("winer \n"+name);
+		JButton finishButton= new JButton("winer :");
+		JButton fiButton= new JButton(name);
+		fiButton.setBackground(Color.GREEN);	
 		finishButton.setBackground(Color.GREEN);
+		fiButton.setEnabled(false);
+		finishButton.setEnabled(false);
 		add(finishButton);
+		add(fiButton);
+		repaint();
+		revalidate();
 	}
 
 	public  void updte(Board board, int XO, Boolean flag) {
@@ -99,5 +104,5 @@ public class MainPanel extends JPanel {
 			return "O";
 		return "";
 	}
-	
+
 }

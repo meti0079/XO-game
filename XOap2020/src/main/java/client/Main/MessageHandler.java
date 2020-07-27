@@ -5,6 +5,8 @@ import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import com.google.common.reflect.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,10 +64,16 @@ public class MessageHandler {
 		case "finish":
 			Finish(x);
 			break;
+		case "try":
+			tryAgain();
+			break;
 		default:
 			System.out.println("not valid request  : "+x);
 			break;
 		}
+	}
+	private void tryAgain() {
+		JOptionPane.showMessageDialog(null,"password or user namr is incorrect!!!! try again");
 	}
 	private void setUsers(String x) {
 		Type listOfMyClassObject = new TypeToken<ArrayList<User>>() {}.getType();

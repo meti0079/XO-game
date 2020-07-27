@@ -52,6 +52,7 @@ public class ReSingup {
 				ServerMain.WriteMessage(mes3, packet.getSocketAddress());
 				map.makeProfile(x);
 			}else {
+				ServerMain.WriteMessage("try>", packet.getSocketAddress());
 				System.out.println("ignor");
 			}
 		} catch (IOException e) {

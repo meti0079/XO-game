@@ -43,6 +43,7 @@ public class ReLogin{
 				ServerMain.WriteMessage(mes2, packet.getSocketAddress());
 				ServerMain.WriteMessage(mes3, packet.getSocketAddress());
 			}else {
+				ServerMain.WriteMessage("try>", packet.getSocketAddress());
 				System.out.println("ignoreee");
 			}
 		} catch (IOException e) {
