@@ -4,10 +4,8 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
+
 import client.Main.Client;
 import client.Main.MessageHandler;
 import gameModel.requset.ReLogin;
@@ -19,7 +17,7 @@ public class LoginPanel extends JPanel{
 	JTextField newname;
 	JPasswordField newpassword;
 	JButton singup;
-
+	JButton digitalWatch;
 	public LoginPanel() {
 		initial();
 		makeNameField();
@@ -29,6 +27,8 @@ public class LoginPanel extends JPanel{
 	private void initial() {
 		setSize(700, 700);
 		setLayout(null);
+		digitalWatch=new DigitalWatch().b;
+		digitalWatch.setBounds(0,0,100,30);
 	}
 	private void makeNameField() {
 		name=new JTextField(15);
@@ -37,6 +37,7 @@ public class LoginPanel extends JPanel{
 		newname=new JTextField(15);
 		newname.setBounds(300, 500, 150, 40);
 		add(newname);
+		add(digitalWatch);
 	}
 
 	private void makePassword() {
@@ -46,6 +47,21 @@ public class LoginPanel extends JPanel{
 		newpassword=new JPasswordField();
 		newpassword.setBounds(300, 550, 150, 40);
 		add(newpassword);
+		JCheckBox checkBox=new JCheckBox();
+		checkBox.setBounds(300,600,20,20);
+		add(checkBox);
+		checkBox.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(checkBox.isSelected()){
+					newpassword.setEchoChar((char)0);
+				}else{
+					newpassword.setEchoChar('*');
+
+				}
+
+			}
+		});
 	}
 
 	private void buttons() {

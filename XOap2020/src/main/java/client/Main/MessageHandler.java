@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.google.common.reflect.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 import client.graphic.Frame;

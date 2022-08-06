@@ -17,13 +17,13 @@ public class Mapper {
 		gson=new Gson();
 	}
 	public void makeProfile(User user) throws IOException {
-		FileWriter f=new FileWriter(System.getProperty("user.dir")+"\\src\\main\\java\\server\\usersfile\\"+user.getName());
+		FileWriter f=new FileWriter(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\usersfile\\"+user.getName());
 		String se=gson.toJson(user);
 		f.write(se);
 		f.close();
 	}
 	public Boolean checkName(String name ,String pass) throws IOException {
-		File file=new File(System.getProperty("user.dir")+"\\src\\main\\java\\server\\user\\all.txt");
+		File file=new File(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\user\\all.txt");
 		Scanner s=new Scanner(file);
 		boolean isther=false;
 		while (s.hasNext()) {
@@ -39,7 +39,7 @@ public class Mapper {
 	}
 	public boolean checkValid(String s) throws IOException {
 		boolean  re=false;
-		File file=new File(System.getProperty("user.dir")+"\\src\\main\\java\\server\\user\\all.txt");
+		File file=new File(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\user\\all.txt");
 		Scanner ss=new Scanner(file);
 		while (ss.hasNext()) {
 			String line=ss.nextLine();
@@ -51,14 +51,14 @@ public class Mapper {
 		return re;
 	}
 	public void writeName(String name ,String pass) throws IOException {
-		FileWriter file=new FileWriter(System.getProperty("user.dir")+"\\src\\main\\java\\server\\user\\all.txt",true);
+		FileWriter file=new FileWriter(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\user\\all.txt",true);
 		file.write(name+"\n");
 		file.write(pass+"\n");
 		file.close();
 	}
 
 	public User readPlayer(String name) throws IOException {
-		File f=new File(System.getProperty("user.dir")+"\\src\\main\\java\\server\\usersfile\\"+name);
+		File f=new File(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\usersfile\\"+name);
 		Scanner s=new Scanner(f);
 		String se="";
 		while(s.hasNext()) {
@@ -104,7 +104,7 @@ public class Mapper {
 
 	private ArrayList<User> readallUser() throws FileNotFoundException {
 		ArrayList<User> x= new ArrayList<>();
-		File fa=new File(System.getProperty("user.dir")+"\\src\\main\\java\\server\\usersfile");
+		File fa=new File(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\usersfile");
 		File[] dirr=fa.listFiles();
 		if(dirr!=null) {
 			for(File ch:dirr) {

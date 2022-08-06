@@ -22,7 +22,8 @@ public class ConfigReader extends Properties{
 		return Integer.parseInt(getProperty("serverPort"));
 	}
 	public void readConfig() throws Exception {
-		InputStream inputStream= new  FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\server\\config\\config.properties");
+		InputStream inputStream= new  FileInputStream(System.getProperty("user.dir")+"\\XOap2020\\src\\main\\java\\server\\config\\config.properties");
 		load(inputStream);
+
 	}
 }
